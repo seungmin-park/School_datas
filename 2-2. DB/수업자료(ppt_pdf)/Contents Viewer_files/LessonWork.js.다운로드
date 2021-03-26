@@ -1,0 +1,62 @@
+
+// Provide a default path to dwr.engine
+if (dwr == null) var dwr = {};
+if (dwr.engine == null) dwr.engine = {};
+if (DWREngine == null) var DWREngine = dwr.engine;
+
+if (LessonWork == null) var LessonWork = {};
+LessonWork._path = '/dwr';
+LessonWork.moveLessonContents = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'moveLessonContents', p0, p1, false, callback);
+}
+LessonWork.moveLessonElement = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'moveLessonElement', p0, false, callback);
+}
+LessonWork.viewEleLessonFileList = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewEleLessonFileList', p0, p1, callback);
+}
+LessonWork.viewLessonFileFolderListDWR = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewLessonFileFolderListDWR', p0, p1, false, callback);
+}
+LessonWork.viewLessonFileListDWR = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewLessonFileListDWR', p0, p1, false, callback);
+}
+LessonWork.addLessonFolderDWR = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'addLessonFolderDWR', p0, false, callback);
+}
+LessonWork.editLessonFile = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'editLessonFile', p0, false, callback);
+}
+LessonWork.editLessonFile = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'editLessonFile', p0, p1, false, false, callback);
+}
+LessonWork.viewLessonFolderList = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewLessonFolderList', p0, false, callback);
+}
+LessonWork.extractLessonFile = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'extractLessonFile', p0, false, callback);
+}
+LessonWork.deleteLessonFile = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'deleteLessonFile', p0, false, callback);
+}
+LessonWork.deleteLessonFileMulti = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'deleteLessonFileMulti', p0, false, callback);
+}
+LessonWork.pasteLessonFile = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'pasteLessonFile', p0, p1, false, callback);
+}
+LessonWork.viewLessonFileInfo = function(p0, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewLessonFileInfo', p0, false, callback);
+}
+LessonWork.viewStudyContents = function(p0, p1, p2, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewStudyContents', p0, p1, p2, false, callback);
+}
+LessonWork.editStudyRecord = function(p0, p1, p2, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'editStudyRecord', p0, p1, p2, false, callback);
+}
+LessonWork.sendVodFile = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'sendVodFile', p0, p1, false, callback);
+}
+LessonWork.viewStudyBoard = function(p0, p1, callback) {
+  dwr.engine._execute(LessonWork._path, 'LessonWork', 'viewStudyBoard', p0, p1, false, callback);
+}
