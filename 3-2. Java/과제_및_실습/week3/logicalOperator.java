@@ -1,4 +1,4 @@
-package Java.week3;
+package 과제_및_실습.week3;
 
 public class logicalOperator{
     public static void main(String[] args) {
