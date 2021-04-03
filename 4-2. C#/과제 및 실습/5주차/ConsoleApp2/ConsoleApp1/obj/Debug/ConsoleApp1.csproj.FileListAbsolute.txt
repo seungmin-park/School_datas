@@ -1,0 +1,6 @@
+E:\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp2\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
+E:\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp2\ConsoleApp1\bin\Debug\ConsoleApp1.exe
+E:\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp2\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
+E:\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp2\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
+E:\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp2\ConsoleApp1\obj\Debug\ConsoleApp1.exe
+E:\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp2\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
