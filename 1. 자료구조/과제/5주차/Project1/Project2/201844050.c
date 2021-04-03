@@ -7,41 +7,25 @@ int main() {
     char         cData[2][2][3] = { {{'a','b','c'}, {'d','e','f'} }, { {'g','h','i'}, {'j','k','l'}} };
     double      dData[2][2][3] = { {{24,25,26}, {27,28,29} }, { {30,31,32}, {33,34,35}} };
 
-    for (i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            for (int r = 0; r < 3; r++) {
-                int* iptr = &iData[i][j][r];
-                printf("\n address: %u  iData[%d][%d][%d]= %d", iptr, i, j, r, *iptr);
-                iptr++;
-            }
-        }
+    int* iptr = &iData[0][0][0];
+    for (i = 0; i < 12; i++) {
+        printf("\n address: %u  iData[%d]= %d", iptr, i, *iptr);
+        iptr++;
     }
-    for (i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            for (int r = 0; r < 3; r++) {
-                float* fptr = &fData[i][j][r];
-                printf("\n address: %u  fData[%d][%d][%d]= %.2f", fptr, i, j, r, *fptr);
-                fptr++;
-            }
-        }
+    float* fptr = &fData[0][0][0];
+    for (i = 0; i < 12; i++) {
+        printf("\n address: %u  fData[%d]= %.2f", fptr, i, *fptr);
+        fptr++;
     }
-    for (i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            for (int r = 0; r < 3; r++) {
-                char* cptr = &cData[i][j][r];
-                printf("\n address: %u  cData[%d][%d][%d]= %c", cptr, i, j, r, *cptr);
-                cptr++;
-            }
-        }
+    char* cptr = &cData[0][0][0];
+    for (i = 0; i < 12; i++) {
+        printf("\n address: %u  cData[%d]= %c", cptr, i, *cptr);
+        cptr++;
     }
-    for (i = 0; i < 2; i++) {
-        for (int j = 0; j < 2; j++) {
-            for (int r = 0; r < 3; r++) {
-                double* dptr = &dData[i][j][r];
-                printf("\n address: %u  dData[%d][%d][%d]= %.2f", dptr, i, j, r, *dptr);
-                dptr++;
-            }
-        }
+    double* dptr = &dData[0][0][0];
+    for (i = 0; i < 12; i++) {
+        printf("\n address: %u  dData[%d]= %.2f", dptr, i, *dptr);
+        dptr++;
     }
 
     return 0;
