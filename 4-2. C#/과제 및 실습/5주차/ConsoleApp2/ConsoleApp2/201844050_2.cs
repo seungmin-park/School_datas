@@ -55,13 +55,32 @@ namespace ConsoleApp1
                 }
                 else
                 {
-                    string[] test = inTimeput.Split(' ');
-                    string[] date = test[0].Split('/');
-                    string[] day = test[1].Split(':');
-                    Console.Write("출고시간 (예:2012/4/3 12:02:03) : ");
-                    string outTimeput = Console.ReadLine();
-                    if(string.IsNullOrEmpty(outTimeput) == true)
+                    string[] inSplit = inTimeput.Split(' ');
+                    string[] inDate = inSplit[0].Split('/');
+                    string[] inDay = inSplit[1].Split(':');
+                    if(inSplit.Length != 2 || inDate.Length != 3 || inDay.Length != 3)
                     {
+                        Console.WriteLine("입고시간이 형식이 잘못되었습니다.");
+                    }
+                    else
+                    {
+                        Console.Write("출고시간 (예:2012/4/3 12:02:03) : ");
+                        string outTimeput = Console.ReadLine();
+                        if (string.IsNullOrEmpty(outTimeput) == false)
+                        {
+                            string[] outSplit = outTimeput.Split(' ');
+                            string[] outDate = outSplit[0].Split('/');
+                            string[] outDay = outSplit[1].Split(':');
+                            if (outSplit.Length != 2 || outDate.Length != 3 || outDay.Length != 3)
+                            {
+                                Console.WriteLine("출고시간이 형식이 잘못되었습니다.");
+                            }
+                            else
+                            {
+                                car.InTime = DateTime.ParseExact(inTimeput, "yyyy/M/d H:m:s", null);
+                                car.OutTime = DateTime.ParseExact(outTimeput, "yyyy/M/d H:m:s", null);
+                            }
+                        }
                         Console.WriteLine(car.PrintState());
                     }
                 }
