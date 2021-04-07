@@ -40,16 +40,17 @@ namespace ConsoleApp1
             Car car = new Car();
             Console.Write("차량번호:");
             string carNumber = Console.ReadLine();
-            if(string.IsNullOrEmpty(carNumber) == true)
+            if(string.IsNullOrEmpty(carNumber) == true) //차량번호 입력되었는지 판단
             {
                 Console.WriteLine("차량번호를 제대로 입력해주세요.");
             }
             else
             {
+                //입고시간 입력
                 car.CarNumber = carNumber;
                 Console.Write("입고시간 (예:2012/4/3 12:02:03) : ");
                 string inTimeput = Console.ReadLine();
-                if (string.IsNullOrEmpty(inTimeput) == true)
+                if (string.IsNullOrEmpty(inTimeput) == true)//입고시간 입력되었는지 판단
                 {
                     Console.WriteLine("입고시간이 형식이 잘못되었습니다.");
                 }
@@ -58,7 +59,7 @@ namespace ConsoleApp1
                     string[] inSplit = inTimeput.Split(' ');
                     string[] inDate = inSplit[0].Split('/');
                     string[] inDay = inSplit[1].Split(':');
-                    if(inSplit.Length != 2 || inDate.Length != 3 || inDay.Length != 3)
+                    if(inSplit.Length != 2 || inDate.Length != 3 || inDay.Length != 3)//입고시간의 년/월/일 시/분/초 확인
                     {
                         Console.WriteLine("입고시간이 형식이 잘못되었습니다.");
                     }
@@ -66,7 +67,7 @@ namespace ConsoleApp1
                     {
                         Console.Write("출고시간 (예:2012/4/3 12:02:03) : ");
                         string outTimeput = Console.ReadLine();
-                        if (string.IsNullOrEmpty(outTimeput) == false)
+                        if (string.IsNullOrEmpty(outTimeput) == false)//출고시간 입력되었는지 판단
                         {
                             string[] outSplit = outTimeput.Split(' ');
                             string[] outDate = outSplit[0].Split('/');
