@@ -1,7 +1,0 @@
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe.config
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.exe
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\bin\Debug\ConsoleApp1.pdb
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csprojAssemblyReference.cache
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.csproj.CoreCompileInputs.cache
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.exe
-C:\Users\tmdla\OneDrive\바탕 화면\github_desktop\School_datas\4-2. C#\과제 및 실습\5주차\ConsoleApp1\ConsoleApp1\obj\Debug\ConsoleApp1.pdb
