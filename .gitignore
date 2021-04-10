@@ -8,3 +8,5 @@ bin
 obj
 *.zip
 .vs
+*.hwp
+*.docx
