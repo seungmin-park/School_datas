@@ -94,22 +94,6 @@ namespace week6_4
             ViewStatus();
         }
 
-        private void ViewStatus()
-        {
-            string message = string.Empty;
-
-            for (int i = 0; i < _cars.Count; i++)
-            {
-                message += string.Format("[{0}] 입고시간 : {1} 주차시간 : {2}{3}"
-                    , _cars[i].CarNumber
-                    , _cars[i].InTime
-                    , _cars[i].ParkingTime()
-                    , Environment.NewLine
-                    );
-            }
-            tbxView.Text = message;
-        }
-
         //메소드 정의
         private bool CheckCarNumber(string number)
         {
@@ -128,6 +112,21 @@ namespace week6_4
                 }
             }
             return null;
+        }
+        private void ViewStatus()
+        {
+            string message = string.Empty;
+
+            for (int i = 0; i < _cars.Count; i++)
+            {
+                message += string.Format("[{0}] 입고시간 : {1} 주차시간 : {2}{3}"
+                    , _cars[i].CarNumber
+                    , _cars[i].InTime
+                    , _cars[i].ParkingTime()
+                    , Environment.NewLine
+                    );
+            }
+            tbxView.Text = message;
         }
     }//class
 }//namespace
