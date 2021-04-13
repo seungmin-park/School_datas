@@ -1,0 +1,12 @@
+데이터베이스는 퍼포먼스떄문에 문제 어쩌구
+tar 공부 백업리커버리
+패스워드파일
+섀도우 파일
+그룹파일
+mysql -u root -p 비밀번호
+ grant all privilages on *.* to root@'%' identified by 'sluk!@34';
+    '> CREATE USER 'inhatc'@'localhost' IDENTIFIED BY 'inhatc!@34';
+    '> CREATE USER 'inhatc'@'%' IDENTIFIED BY 'inhatc!@34';
+    '> grant all privilages on inhatc_db.* to 'inhatc'@'localhost';
+    '> grant all privilages on inhatc_db.* to 'inhatc'@'%';
+    '> flush privilages
