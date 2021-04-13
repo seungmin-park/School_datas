@@ -10,3 +10,27 @@ mysql -u root -p 비밀번호
     '> grant all privilages on inhatc_db.* to 'inhatc'@'localhost';
     '> grant all privilages on inhatc_db.* to 'inhatc'@'%';
     '> flush privilages
+
+systemctl start mariadb.service
+yum remove maria*
+  556  rm -rf /etc/my.cnf*
+  557  rm -rf /var/log/mysql
+  558  rm -rf /var/lib/mysql
+  559  yum install mariadb-server
+  560  systemctl start mariadb.service
+  561  ps -edf |grep maria
+  562  cat /etc/my.cnf
+  563  ps -edf |grep mysql
+  564  cat /etc/my.cnf
+  565  clear
+  566  cat /etc/my.cnf
+  567  cd /etc/my.cnf.d/
+  568  ls
+  569  pwd
+  570  ls -al
+  571  vi mariadb-server.cnf
+  572  cd /var/lib/mysql
+  573  ls -al
+  574  ps -edf|grep mysql
+  575  mysql -u root
+  576  mysql -u root -p
