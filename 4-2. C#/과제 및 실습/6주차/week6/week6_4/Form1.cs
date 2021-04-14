@@ -113,7 +113,7 @@ namespace week6_4
             }
             return null;
         }
-        private void ViewStatus()
+        public void ViewStatus()
         {
             string message = string.Empty;
 
