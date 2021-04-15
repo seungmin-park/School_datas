@@ -1,4 +1,4 @@
-package 과제_및_실습.week5;
+package week5;
 
 public class ForStar {
     public static void main(String[] args) {

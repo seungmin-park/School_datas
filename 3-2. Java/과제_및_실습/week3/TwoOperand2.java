@@ -1,4 +1,4 @@
-package 과제_및_실습.week3;
+package week3;
 
 public class TwoOperand2 {
    public static void main(String[] args) {
