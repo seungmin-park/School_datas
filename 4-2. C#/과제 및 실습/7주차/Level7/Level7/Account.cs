@@ -43,6 +43,8 @@ namespace Level7
             //this._balance = 0; 인스턴스 변수는 기본적으로 초기화됨
         }
 
+        int[,] abc = new int[0,0];
+
         public bool Deposit(int amount)//amount 는 지역변수이자 매개변수
         {
             if (this._balance + amount > Account._maxBalance)
