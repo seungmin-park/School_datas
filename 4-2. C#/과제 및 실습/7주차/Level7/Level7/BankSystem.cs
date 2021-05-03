@@ -15,6 +15,7 @@ namespace Level7
             //Account acc1 = new Account();
             Account acc2 = new Account("111-111-111", "김인하", 1000);
             Account acc3 = new Account("211-111-111", "이인하");
+            Console.Read();
 
             acc2.Deposit(10000);//seter 역할
             acc2.WithDraw(2000);
