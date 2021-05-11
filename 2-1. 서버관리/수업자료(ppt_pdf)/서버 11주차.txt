@@ -1,0 +1,140 @@
+11주차
+
+
+백업 & 리커버리
+- DB : Cold Backup
+- File
+- config File
+
+
+
+[root@inhatc backup]# crontab -l
+10 1 * * * sh /home/backup/shell/backup_inhatc_db.sh > /dev/null 2>&1
+
+
+[root@inhatc backup]# cat /home/backup/shell/backup_inhatc_db.sh
+#!/bin/bash
+time=`date +%Y%m%d%H%M`
+
+find /home/backup/ -type f -name "inhatc*_138_*.sql" -mtime +7 -exec rm -f {} \;
+
+/usr/bin/mysqldump -u inhatc -p'*****' inhatc_db > "/home/backup/inhatc_db_138_"$time".sql"
+
+
+
+
+
+
+셀 프로그램
+
+- 코드 확보 : 공용서버
+- 방식 wget http://10.10.1010/shell_sample.jpg
+
+
+pgrep -x httpd
+ps -edf|grep httpd |awk -F' ' '{print $2}'
+
+
+pgrep -x httpd | xargs kill -9
+awk '/MemFree/ {print $1}' /proc/meminfo
+
+ps -A -o rss,args |grep http|awk '{x += $1;y += 1} END {print "Apache Memory Usage (MB): "x/1024; print "Average Proccess Size (MB): "x/((y-1)*1024)}'
+
+
+
+AWK
+유형 1
+cat /etc/passwd | awk -F: '{print $1, $6}'
+
+유형2
+awk '/SwapFree/ {print $2}' /proc/meminfo      
+cat /proc/meminfo |awk '/SwapFree/ {print $2}'      
+
+또 다른 방법
+free | awk '/Swap/ {print $4}'
+
+방식의 차이
+cat /etc/passwd |grep lucas7
+grep lucas7 /etc/passwd
+
+[Q]
+현재 http process id 목록 추출
+ps -edf|grep httpd |awk -F' ' '{print $2}'
+
+
+
+
+
+
+#!bin/bash
+while ( true ) ; do
+if [ "`pgrep -x httpd | wc -l`" -ge "500" ] ; then
+
+/usr/sbin/apachectl restart
+fi
+sleep 1
+done
+
+//clear
+
+#!bin/bash
+while ( true ) ; do
+if [ "`pgrep -x httpd | wc -l`" -ge "500" ] ; then
+/bin/netstat -na |wc -l
+fi
+sleep
+done
+
+//clear
+
+#!bin/bash
+while ( true )
+do
+
+
+freeswap = `awk '/SwapFree/ {print $2}' /proc/meminfo`
+if [ $freeswap -le "1400000" ]
+
+then
+systemctl start httpd.service
+date >> /var/log/http_restart_log
+netstat -na |wc -l >> http_restart_log
+fi
+sleep 3
+done
+//clear
+
+
+
+#! /bin/bash
+while ( true )
+do
+
+memfree=`awk '/MemFree/ {print $2}' /proc/meminfo`
+if [ $memfree -le "480000" ]
+
+then
+date >> /var/log/http_restart_log
+netstat -na |wc -l >> http_restart_log
+fi
+sleep 3
+done
+//clear
+
+#!bin/bash
+while ( : )
+do
+
+httpdcount=`ps -ef | grep httpd | wc -l`
+if [ $httpdcount -le "1" ]
+
+then
+echo "Apache is restarted."
+echo "httpdcount
+systemctl start httpd.service
+logger " Apache Web Server Restarted..."
+
+fi
+sleep 5
+done
+//clear
