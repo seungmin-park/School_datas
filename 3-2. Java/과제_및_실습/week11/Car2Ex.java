@@ -1,9 +1,12 @@
 package week11;
 
 public class Car2Ex {
-    Sedan sedan = new Sedan();
-    Truck truck = new Truck();
+   public static void main(String[] args) {
+      Sedan sedan = new Sedan();
+      Truck truck = new Truck();
+      
+      sedan.work();
+      truck.work();
+   }
 
-    Sedan.work();
-    truck.work();
 }
