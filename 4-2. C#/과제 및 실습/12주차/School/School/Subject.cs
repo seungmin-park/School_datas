@@ -58,7 +58,7 @@ namespace School
             {
                 if (week >= 1 || week <= WEEK)
                 {
-                    return _attendanceBook[week];
+                    return _attendanceBook[week - 1];
                 }
                 else
                 {
@@ -67,10 +67,10 @@ namespace School
             }
             set
             {
-                if(week >= 1 || week <= WEEK)
-                {
-                    _attendanceBook[week - 1] = value;
-                }
+                //if(week >= 1 || week <= WEEK)
+                //{
+                //}
+                _attendanceBook[week - 1] = value;
                 
             }
         }

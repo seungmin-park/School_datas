@@ -340,7 +340,7 @@ namespace School
             {
                 int index = dgvScore.Rows.Add();
                 dgvScore.Rows[index].Cells[0].Value = sub.Title;
-                dgvScore.Rows[index].Cells[0].Value = sub.Score.ToString("F1");
+                dgvScore.Rows[index].Cells[1].Value = sub.Score.ToString("F1");
             }
         }
 
@@ -413,7 +413,6 @@ namespace School
                 dgvView.Rows[index].Cells[0].Value = sub.Title;
                 dgvView.Rows[index].Cells[1].Value = sub.Score.ToString("F1");
 
-                //int empty, attend, absence, late;
                 sub.AttendState(out int empty, out int attend, out int absence, out int late);
 
                 dgvView.Rows[index].Cells[2].Value = attend;
@@ -421,14 +420,15 @@ namespace School
                 dgvView.Rows[index].Cells[4].Value = absence;
             }
 
-            Subject maxSudject = null;
-            Subject minSudject = null;
-            double avg = 0.0;
-            if (_studentAttend.MinMaxAvg(ref minSudject, ref maxSudject, out avg))
+            Subject maxSubject = null;
+            Subject minSubject = null;
+            double avg;
+
+            if(_studentAttend.MinMaxAvg(ref minSubject, ref maxSubject, out avg))
             {
                 lblViewAvg.Text = avg.ToString("F1");
-                lblViewMax.Text = maxSudject.Score.ToString("F1");
-                lblViewMin.Text = minSudject.Score.ToString("F1");
+                lblViewMax.Text = maxSubject.Score.ToString("F1");
+                lblViewMin.Text = minSubject.Score.ToString("F1");
             }
             else
             {
