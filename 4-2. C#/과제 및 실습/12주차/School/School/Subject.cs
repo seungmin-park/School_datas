@@ -67,10 +67,10 @@ namespace School
             }
             set
             {
-                //if(week >= 1 || week <= WEEK)
-                //{
-                //}
+                if(week >= 1 || week <= WEEK)
+                {
                 _attendanceBook[week - 1] = value;
+                }
                 
             }
         }
@@ -83,7 +83,7 @@ namespace School
             absence = 0;
             late = 0;
 
-            for(int i = 0; i < Subject.WEEK; i++)
+            for(int i = 1; i < Subject.WEEK; i++)
             {
                 ATTEND_TYPE state = this[i]; //인데서를 이용해서 값을 가져오고 있음
                 if(state == ATTEND_TYPE.ATTEND)
