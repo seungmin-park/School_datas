@@ -5,10 +5,11 @@ public class MyThread extends Thread {
 
     public MyThread(int x){
         this.x = x;
+        setDaemon(true);
     }
 
     @Override
     public void run(){
-        System.out.println(x +"번째 스레드 입니다.");
+        System.out.println(x +" 번째 스레드 입니다.");
     }
 }

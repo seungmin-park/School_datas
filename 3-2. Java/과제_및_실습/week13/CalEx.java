@@ -11,5 +11,9 @@ public class CalEx {
         CalUser2 user2 = new CalUser2();
         user2.setCalculator(calculator);
         user2.start();
+        int x = 1;
+            int y = 2;
+            String s = String.valueOf(x+"+"+y);
+            System.out.println(s);
     }
 }
