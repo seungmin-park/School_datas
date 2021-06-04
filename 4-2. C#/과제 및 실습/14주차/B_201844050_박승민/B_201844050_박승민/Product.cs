@@ -61,8 +61,9 @@ namespace B_201844050_박승민
             }
         }
 
-        public Product(string name, int unitprice, int stockcount, double discountrate)
+        public Product(int number,string name, int unitprice, int stockcount, double discountrate)
         {
+            _number = number;
             _name = name;
             _stockCount = stockcount;
             _unitPrice = unitprice;

@@ -8,7 +8,7 @@ namespace B_201844050_박승민
 {
     class Sale
     {
-        private int _number;
+        private int _number;//판매번호
         public int Number
         {
             get
@@ -16,7 +16,7 @@ namespace B_201844050_박승민
                 return _number;
             }
         }
-        private int _prodNumber;
+        private int _prodNumber;//상품번호
         public int ProdNumber
         {
             get
@@ -24,7 +24,7 @@ namespace B_201844050_박승민
                 return _prodNumber;
             }
         }
-        private DateTime _date;
+        private DateTime _date;//판매일자
         public DateTime Date
         {
             get
@@ -33,7 +33,7 @@ namespace B_201844050_박승민
             }
         }
 
-        private int _count;
+        private int _count;//판매수량
         public int Count
         {
             get
@@ -46,7 +46,7 @@ namespace B_201844050_박승민
             }
         }
 
-        private int _price;
+        private int _price; // 총 판매금액
         public int Price
         {
             get

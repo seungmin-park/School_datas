@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -179,6 +180,22 @@ namespace ConsoleApp1
             {
                 Subject sub = student.RegSubjects[i];
                 Console.WriteLine($"{sub.Title}-->{sub.Score?? 0}");//널병합 연산자 nullable 타입이라 사용가능 null일 경우 0
+            }
+
+            string dir = "c:\\test";
+            if (!Directory.Exists(dir))//디렉토리 존재여부
+            {
+                Directory.CreateDirectory(dir);//디렉토리 생성
+            }
+
+            string file = dir + "\\test.txt";
+            if (File.Exists(file))//파일 존재여부
+            {
+                File.Delete(file);//파일삭제
+            }
+            else
+            {
+                File.Create(file);//파일생성
             }
         }
     }
