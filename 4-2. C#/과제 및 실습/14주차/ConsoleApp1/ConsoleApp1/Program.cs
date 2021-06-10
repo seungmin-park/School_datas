@@ -12,7 +12,7 @@ namespace ConsoleApp1
         static List<Product> productList = new List<Product>();
         static List<Sale> saleList = new List<Sale>();
         static string path = "c:\\Fin201844050";
-        static string fileProduct = "prduct.txt";
+        static string fileProduct = "product.txt";
         static string fileSale = "sale.txt";
 
 
@@ -78,26 +78,26 @@ namespace ConsoleApp1
             filename = Path.Combine(path, fileProduct);
             if (File.Exists(filename))
             {
-                using (var sr = new StreamReader(new FileStream(filename, FileMode.Open), Encoding.UTF8))
+                using (var sr = new StreamReader(new FileStream(filename, FileMode.Open)))
                 {
                     while (!sr.EndOfStream)
                     {
-                        string data = sr.ReadLine();//record
-                        string[] splitData = data.Split(',');
+                        string data = sr.ReadLine(); //record
+                        string[] splitdata = data.Split(',');
 
-                        if(splitData.Length == 5)
+                        if (splitdata.Length == 5)
                         {
                             try
                             {
-                                var number = int.Parse(splitData[0]);
-                                var name = splitData[1];
-                                var price = int.Parse(splitData[2]);
-                                var stock = int.Parse(splitData[3]);
-                                var discount = double.Parse(splitData[4]);
+                                var number = int.Parse(splitdata[0]);
+                                var name = splitdata[1];
+                                var price = int.Parse(splitdata[2]);
+                                var stock = int.Parse(splitdata[3]);
+                                var discount = double.Parse(splitdata[4]);
 
-                                productList.Add(new Product(number, name, stock, price, discount));
+                                productList.Add(new Product(number, name, stock, price, discount));//복구
                             }
-                            catch(Exception ex)
+                            catch (Exception ex)
                             {
                                 Console.WriteLine(ex.Message);
                             }
@@ -109,34 +109,29 @@ namespace ConsoleApp1
             filename = Path.Combine(path, fileSale);
             if (File.Exists(filename))
             {
-                using (var sr = new StreamReader(new FileStream(filename, FileMode.Open), Encoding.UTF8))
+                using (var sr = new StreamReader(new FileStream(filename, FileMode.Open)))
                 {
                     while (!sr.EndOfStream)
                     {
-                        string data = sr.ReadLine();//record
-                        string[] splitData = data.Split(',');
+                        var data = sr.ReadLine(); //record
+                        string[] splitdata = data.Split(',');
 
-                        if (splitData.Length == 5)
+                        if (splitdata.Length == 5)
                         {
-                            try
-                            {
-                                int number = int.Parse(splitData[0]);
-                                int prodNumber = int.Parse(splitData[1]);
+                            int number = int.Parse(splitdata[0]);
+                            int prodnsumber = int.Parse(splitdata[1]);
+                            int count = int.Parse(splitdata[3]);
+                            int price = int.Parse(splitdata[4]);
 
-                                int year = int.Parse(splitData[2].Substring(0,4));
-                                int month = int.Parse(splitData[2].Substring(4, 2));
-                                int day = int.Parse(splitData[2].Substring(6, 2));
-                                DateTime date = new DateTime(year, month, day);
 
-                                int count = int.Parse(splitData[3]);
-                                int price = int.Parse(splitData[4]);
+                            var year = int.Parse(splitdata[2].Substring(0, 4));
+                            var month = int.Parse(splitdata[2].Substring(4, 2));
+                            var day = int.Parse(splitdata[2].Substring(6, 2));
 
-                                saleList.Add(new Sale(number, prodNumber, date, count, price));
-                            }
-                            catch (Exception ex)
-                            {
-                                Console.WriteLine(ex.Message);
-                            }
+                            var date = new DateTime(year, month, day);
+
+                            saleList.Add(new Sale(number, prodnsumber, date, count, price));
+
                         }
                     }
                 }
@@ -197,16 +192,17 @@ namespace ConsoleApp1
 
                 var fileName = Path.Combine(path, fileSale);
 
-                using (var sw = new StreamWriter(new FileStream(fileName, FileMode.Append),Encoding.UTF8))
+                using (var sw = new StreamWriter(new FileStream(fileName, FileMode.Append)))
                 {
                     sw.WriteLine($"{sale.Number.ToString("000000")},{sale.ProdNumber.ToString("000000")},{sale.Date.ToString("yyyyMMdd")},{sale.Count.ToString("00000000")},{sale.Price.ToString("0000000000")}");
                 }
 
-                var filename = Path.Combine(path, fileSale);
+                var filename = Path.Combine(path, fileProduct);
                 using (var fs = new FileStream(filename, FileMode.Open))
                 {
-                    using (var sr = new StreamReader(fs, Encoding.UTF8))
+                    using (var sr = new StreamReader(fs))
                     {
+                        //한줄씾ㄱ읽으면서,원하는제품을찾기
                         int pos = 0;
                         while (!sr.EndOfStream)
                         {
@@ -238,56 +234,60 @@ namespace ConsoleApp1
 
         private static void UpateProduct()
         {
-
             string name;
-            string inputSel;
+            string inputsel;
             int count;
             double discount;
-            Product searchProduct = null;
+            Product searchproduct = null;
+
             try
             {
-
                 Console.Write("상품명:");
                 name = Console.ReadLine();
 
-                //foreach (var prod in productList)
+                searchproduct = productList.FirstOrDefault(m => m.Name == name);
+
+                //for(int i=0; i < productlist.Count; i++)
                 //{
-                //    if (prod.Name == name)
+                //    if(productlist[i].Name == name)
                 //    {
-                //        Console.WriteLine($"단가:{prod.UnitPrice}");
+                //        searchproduct = productlist[i];
+                //        break;
                 //    }
                 //}
-                searchProduct = productList.FirstOrDefault(m => m.Name == name);
-                if (searchProduct == null)
+
+                if (searchproduct == null)
                 {
-                    Console.WriteLine("상품 정보 없음");
+                    Console.WriteLine("상품정보 없음");
                     return;
                 }
 
-                Console.WriteLine($"현재 재고 : {searchProduct.StockCount}");
-                Console.WriteLine($"30개 이상 구매시 할인율 : {searchProduct.DiscountRate*100}%");
+                Console.WriteLine($"현재 재고:{searchproduct.StockCount}");
+                Console.WriteLine($"30개 이상 구매시 할인율:{(int)(searchproduct.DiscountRate * 100)}%");
+
                 Console.Write("추가 입고 수량 입력(1) 할인율 수정(2):");
-                inputSel = Console.ReadLine().Trim();
+                inputsel = Console.ReadLine().Trim();
 
-                if (string.IsNullOrEmpty(inputSel))
+                if (string.IsNullOrEmpty(inputsel))
                 {
                     return;
                 }
-                //재고수량 변경
-                if(inputSel == "1")
+
+                if (inputsel == "1")
                 {
                     try
                     {
-                        Console.Write("추가 재고 수량 : ");
+                        //재고수량 변경
+                        Console.Write("추가 재고 수량:");
                         count = int.Parse(Console.ReadLine());
-
-                        searchProduct.AddStockCount(count);
-                        Console.WriteLine($"현재 재고 : {searchProduct.StockCount}");
+                        searchproduct.AddStockCount(count);
+                        Console.WriteLine($"현재 재고:{searchproduct.StockCount}");
 
                         var filename = Path.Combine(path, fileProduct);
+
                         using (var fs = new FileStream(filename, FileMode.Open))
                         {
-                            using (var sr = new StreamReader(fs, Encoding.UTF8))
+                            using (var sr = new StreamReader(fs))
                             {
                                 //한줄씾ㄱ읽으면서,원하는제품을찾기
                                 int pos = 0;
@@ -295,13 +295,13 @@ namespace ConsoleApp1
                                 {
                                     var data = sr.ReadLine();
 
-                                    if (0 == data.IndexOf(searchProduct.Number.ToString("000000")))
+                                    if (0 == data.IndexOf(searchproduct.Number.ToString("000000")))
                                     {
                                         var seekpos = pos + Encoding.UTF8.GetByteCount(data) - Encoding.UTF8.GetByteCount("000000,00.00");
 
                                         fs.Seek(seekpos, SeekOrigin.Begin);
 
-                                        var wdata = Encoding.UTF8.GetBytes(searchProduct.StockCount.ToString("000000"));
+                                        var wdata = Encoding.UTF8.GetBytes(searchproduct.StockCount.ToString("000000"));
                                         fs.Write(wdata, 0, wdata.Length);
 
                                         break;
@@ -312,61 +312,63 @@ namespace ConsoleApp1
                             }
                         }
                     }
-                    catch(Exception ex)
+                    catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
                         return;
                     }
                 }
-                //할인율변경
-                else if(inputSel == "2")
+                else if (inputsel == "2")
                 {
                     try
                     {
-                        Console.Write("수정 할인율(예:10% -> 0.1입력) : ");
+                        //할인율 변경
+                        Console.Write("수정 할인율(예:10% ->0.1입력):");
                         discount = double.Parse(Console.ReadLine());
+                        searchproduct.DiscountRate = discount;
+                        Console.WriteLine($"변경 30개 이상 구매시 할인율:{(int)(searchproduct.DiscountRate * 100)}");
 
-                        searchProduct.DiscountRate = discount;
-                        Console.WriteLine($"변경 30개 이상 구매시 할인율 : {searchProduct.DiscountRate*100}%");
 
-                        var filename = Path.Combine(path, fileSale);
-                        using(var fs = new FileStream(filename, FileMode.Open))
+                        var filename = Path.Combine(path, fileProduct);
+
+                        using (var fs = new FileStream(filename, FileMode.Open))
                         {
-                            using (var sr = new StreamReader(fs, Encoding.UTF8))
+                            using (var sr = new StreamReader(fs))
                             {
+                                //한줄씾ㄱ읽으면서,원하는제품을찾기
                                 int pos = 0;
                                 while (!sr.EndOfStream)
                                 {
                                     var data = sr.ReadLine();
 
-                                    if (0 == data.IndexOf(searchProduct.Number.ToString("000000")))
+                                    if (0 == data.IndexOf(searchproduct.Number.ToString("000000")))
                                     {
                                         var seekpos = pos + Encoding.UTF8.GetByteCount(data) - Encoding.UTF8.GetByteCount("00.00");
 
                                         fs.Seek(seekpos, SeekOrigin.Begin);
 
-                                        var wdata = Encoding.UTF8.GetBytes(searchProduct.DiscountRate.ToString("00.00"));
+                                        var wdata = Encoding.UTF8.GetBytes(searchproduct.DiscountRate.ToString("00.00"));
                                         fs.Write(wdata, 0, wdata.Length);
-    
-                                    break;
+
+                                        break;
                                     }
 
                                     pos += Encoding.UTF8.GetByteCount(data) + Environment.NewLine.Length;
                                 }
                             }
                         }
+
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
                         return;
                     }
                 }
+
+
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
-                return;
+
             }
         }
 
@@ -398,7 +400,7 @@ namespace ConsoleApp1
             }
 
             var fileName = Path.Combine(path, fileProduct);
-            using (var sw = new StreamWriter(new FileStream(fileName, FileMode.Append), Encoding.UTF8))//이거 다시 한번 확인하기
+            using (var sw = new StreamWriter(new FileStream(fileName, FileMode.Append)))//이거 다시 한번 확인하기
             {
                 sw.WriteLine($"{product.Number.ToString("000000")}," +
                     $"{product.Name}," +
