@@ -9,7 +9,6 @@ namespace School
     //derive:base
     class StudentIndustrialEdu :Student
     {
-
         const int MAX_REG_SUBJECT = 4;
 
         private string _company;
@@ -34,6 +33,7 @@ namespace School
         {
             _company = company;
         }
+
 
         public new bool RegCourse(string subject)//hiding
         {

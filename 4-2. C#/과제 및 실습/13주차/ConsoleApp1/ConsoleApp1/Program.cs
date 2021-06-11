@@ -18,6 +18,8 @@ namespace ConsoleApp1
             set;
         }
 
+        
+
         private double? _score; //점수
         public double? Score
         {
