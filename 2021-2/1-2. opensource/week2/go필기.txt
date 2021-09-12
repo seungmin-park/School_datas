@@ -1,0 +1,36 @@
+패키지 임포트 를 하면 반드시 사용해야함
+IDE 에서삭제 or 에러
+
+math수학관련 패키지
+
+메소드 
+ceil 올림
+floor 내림
+round 반올림
+
+strings 문자열 관련
+Title 화이트스페이스 기준으로 각 단어의 첫글자 대문자로 변환
+
+변수 선언
+var 사용
+var 변수이름 타입
+변수 선언도 패키지와 마찬가지로 선언만 하고 사용하지않으면 에러
+'' rune → 해당 문자의 유니코드
+"" String
+var c rune = '가'
+Println(c) // 유니코드값 출력 UTF-8     
+Printf("%c\n",c) // 한글자 출력        
+Printf("%T",c) // 타입 출력 int32 alias
+
+var a int16 = 7
+fmt.Println(a)
+var a = 7 or a := 7
+변수에 할당된 값을 보고 타입 자동 결정
+
+ex)
+a := 7.1
+a = 1 1이 float타입으로 변환되어 들어 가능
+
+a: = 1
+a = 7.1 불가능
+float타입인 7.1이 32비트인 int 형으로 타입변환에서 문제가 발생
