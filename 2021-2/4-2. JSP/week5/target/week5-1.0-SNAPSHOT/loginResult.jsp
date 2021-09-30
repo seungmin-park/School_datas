@@ -29,8 +29,6 @@
             아이디나 비밀번호의 형식이 잘못 됐습니다.<br>
         <%}%>
 <br>
-<form action="index.jsp"method="get">
-    <input type="submit" value="돌아가기">
-</form>
+<button onclick="location.href='index.jsp'">돌아가기</button>
 </body>
 </html>
