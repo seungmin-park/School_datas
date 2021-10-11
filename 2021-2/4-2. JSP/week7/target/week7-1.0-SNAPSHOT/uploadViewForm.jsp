@@ -17,11 +17,6 @@
     request.setCharacterEncoding("UTF-8");
     String fileName = request.getParameter("fileName");
 %>
-<script language="javascript">
-    function winOpen(url) {
-        window.open(url, "newWin", "width=190, height=20, toolbar=no")
-    }
-</script>
 <table border="1" width="300px" style="text-align: center">
     <caption>업로드 파일</caption>
     <tr>
@@ -34,7 +29,7 @@
     </tr>
     <th>음악</th>
     <td>
-        <a href="javascript:winOpen('play.jsp?file=<%=fileName%>>')">음악 파일 듣기</a>
+        <a href="audio.jsp?fileName=<%=fileName%>">음악 파일 듣기</a>
     </td>
     </tr>
 </table>
