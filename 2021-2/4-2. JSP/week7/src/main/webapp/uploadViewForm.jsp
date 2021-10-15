@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tmdla
-  Date: 2021-10-11
-  Time: 오전 12:21
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -29,7 +22,7 @@
     </tr>
     <th>음악</th>
     <td>
-        <a href="audio.jsp?fileName=<%=fileName%>">음악 파일 듣기</a>
+        <a href="#" onclick="audioPlay()">음악 파일 듣기</a>
     </td>
     </tr>
 </table>
@@ -37,3 +30,11 @@
 <button onclick="location.href='uploadForm.jsp'">돌아가기</button>
 </body>
 </html>
+<script>
+    function audioPlay() {
+        let audio = new Audio();
+        audio.src = "fileSave/<%=fileName%>";
+        audio.type = "audio/mpeg";
+        audio.play();
+    }
+</script>
