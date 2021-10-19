@@ -1,0 +1,114 @@
+/*header.jsp*/
+.bookMenu{
+    padding-left: 20px;
+    background-color: #3D3D3D;
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    box-sizing: border-box;
+    align-items: center;
+}
+
+a{
+    margin-left: 20px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: center;
+}
+
+/*index.jsp*/
+.indexMainPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.mainPage{
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageTitle{
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.subInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.welcomeMessage{
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/*footer.jsp*/
+.pageAdminInfo{
+    border-top: 1px solid gray;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*BookInsertForm.jsp*/
+.bookInsertFormHeader{
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.bookInsertFormHeader-title{
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+/*bookInfo.jsp*/
+.bookInfo{
+    background-color: #EAEAEA;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+}
+
+.bookInfo-text{
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.bookInfoMainFrame {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.bookInfoMainFrame-image image{
+    width: 350px;
+    height: 250px;
+}
+
+.bookInfoMainFrame-info{
+    height: 100%;
+}
