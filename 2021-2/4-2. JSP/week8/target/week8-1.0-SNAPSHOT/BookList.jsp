@@ -14,19 +14,28 @@
 <body>
 <jsp:useBean id="book" class="com.example.week8.Book" scope="application" />
 <jsp:include page="header.jsp"/>
-<div>
-    <span>도서 목록</span>
-</div>
 <div class="bookListInfo">
-    <div>
-        <img src="fileSave/<jsp:getProperty name="book" property="fileImage"/>" alt="<jsp:getProperty name="book" property="fileImage"/>">
+    <span class="bookListInfo-header">도서 목록</span>
+</div>
+<div class="bookListInfo-mainFrame">
+    <div class="bookListInfo-mainFrame-image">
+        <img src="fileSave/<jsp:getProperty name="book" property="fileImage" />"
+             alt="<jsp:getProperty name="book" property="fileImage" />">
     </div>
-    <div>
-        <h2><jsp:getProperty name="book" property="name"/></h2>
+    <div class="bookListInfo-mainFrame-info">
+        <h2 class="bookListInfo-mainFrame-info-header">
+            <h2><jsp:getProperty name="book" property="name" /></h2>
+        </h2>
+        <div class="bookListInfo-mainFrame-info-explanation">
+          <jsp:getProperty name="book" property="info"
+          /></div>
         <br>
-        <jsp:getProperty name="book" property="info" />
         <br>
-        <jsp:getProperty name="book" property="author"/>|<jsp:getProperty name="book" property="publisher"/>|<jsp:getProperty name="book" property="price"/>
+        <span
+        ><jsp:getProperty name="book" property="author" /> |
+          <jsp:getProperty name="book" property="publisher" /> |
+          <jsp:getProperty name="book" property="price"
+          /></span>
     </div>
 </div>
 <jsp:include page="footer.jsp"/>

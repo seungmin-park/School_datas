@@ -1,7 +1,7 @@
 /*header.jsp*/
-.bookMenu{
+.bookMenu {
     padding-left: 20px;
-    background-color: #3D3D3D;
+    background-color: #3d3d3d;
     width: 100%;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -9,7 +9,7 @@
     align-items: center;
 }
 
-a{
+a {
     margin-left: 20px;
     color: white;
     font-weight: 600;
@@ -18,15 +18,15 @@ a{
 }
 
 /*index.jsp*/
-.indexMainPage{
+.indexMainPage {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.mainPage{
-    background-color: #EAEAEA;
+.mainPage {
+    background-color: #eaeaea;
     width: 100%;
     height: 300px;
     display: flex;
@@ -35,12 +35,12 @@ a{
     justify-content: center;
 }
 
-.pageTitle{
+.pageTitle {
     font-weight: bold;
     font-size: 30px;
 }
 
-.subInfo{
+.subInfo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -49,66 +49,119 @@ a{
     margin-bottom: 10px;
 }
 
-.welcomeMessage{
+.welcomeMessage {
     font-size: 15px;
     font-weight: bold;
     margin-bottom: 15px;
 }
 
 /*footer.jsp*/
-.pageAdminInfo{
+.pageAdminInfo {
     border-top: 1px solid gray;
     padding-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
 }
 
-
 /*BookInsertForm.jsp*/
-.bookInsertFormHeader{
-    background-color: #EAEAEA;
+.bookInsertFormHeader {
+    background-color: #eaeaea;
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
-.bookInsertFormHeader-title{
+.bookInsertFormHeader-title {
     font-size: 25px;
     font-weight: bold;
     padding-left: 10px;
 }
 
 /*bookInfo.jsp*/
-.bookInfo{
-    background-color: #EAEAEA;
+.bookInfo,
+.bookListInfo {
+    background-color: #eaeaea;
     width: 100%;
     height: 80px;
     display: flex;
-    justify-content: center;
+    align-items: center;
 }
 
-.bookInfo-text{
+.bookInfo-text,
+.bookListInfo-header {
     font-size: 25px;
     font-weight: bold;
     padding-left: 10px;
 }
 
+.bookInfoMainFrame-info-title-name,
+.bookListInfo-mainFrame-info-header {
+    margin: 0px;
+}
+
 .bookInfoMainFrame {
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    height: auto;
 }
 
-.bookInfoMainFrame-image image{
-    width: 350px;
-    height: 250px;
+.bookInfoMainFrame-image {
+    float: left;
+    margin-left: 50px;
+    margin-top: 20px;
 }
 
-.bookInfoMainFrame-info{
-    height: 100%;
+.bookInfoMainFrame-image img {
+    width: 330px;
+    height: 370px;
+}
+.bookInfoMainFrame-info {
+    margin-left: 50px;
+    float: left;
+    width: 70%;
+}
+
+.bookInfoMainFrame-info-bookInfo {
+    width: 900px;
+}
+
+/*BookList.jsp*/
+
+.bookListInfo {
+    width: 100%;
+}
+
+.bookListInfo-mainFrame {
+    width: 100%;
+    height: auto;
+}
+
+.bookListInfo-mainFrame-image {
+    float: left;
+}
+
+.bookListInfo-mainFrame-info {
+    width: 60%;
+    float: left;
+}
+
+.bookListInfo-mainFrame-image {
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.bookListInfo-mainFrame-image img {
+    width: 160px;
+    height: 200px;
+}
+
+.bookListInfo-mainFrame-info {
+    margin-left: 50px;
+}
+
+.bookListInfo-mainFrame-info-explanation {
+    margin-bottom: 20px;
 }

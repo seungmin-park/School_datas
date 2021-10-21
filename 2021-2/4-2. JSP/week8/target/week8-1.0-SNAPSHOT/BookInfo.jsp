@@ -1,12 +1,6 @@
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: tmdla
-  Date: 2021-10-18
-  Time: 오후 9:50
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.io.File" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -18,6 +12,12 @@
 <%
     String path = "/fileSave";
     String realPath = application.getRealPath(path);
+
+    File folder = new File(realPath);
+
+    if (!folder.exists()) {
+        folder.mkdir();
+    }
 
     int max = 1024 * 1024 * 10;
     MultipartRequest mt = new MultipartRequest(request, realPath, max,"utf-8",new DefaultFileRenamePolicy());
@@ -54,34 +54,40 @@
 </div>
 <div class="bookInfoMainFrame">
     <div class="bookInfoMainFrame-image">
-        <img src="fileSave/<%=fileName%>" alt="<%=fileName%>">
+        <img
+                class="bookInfoMainFrame-image-screen"
+                src="fileSave/<%=fileName%>"
+        />
     </div>
     <div class="bookInfoMainFrame-info">
         <span class="bookInfoMainFrame-info-title">
-            <h1><%=name%></h1>
-        </span>
-        <span class="bookInfoMainFrame-info-explanation">
-            <%=info%>
+          <h1 class="bookInfoMainFrame-info-title-name"><%=name%></h1>
         </span>
         <span class="bookInfoMainFrame-info-bookInfo">
-            <span>
-                도서코드 : <%=code%> <br>
-                저자 : <%=author%><br>
-                출판사 : <%=publisher%><br>
-                출판일 : <%=publishingDate%><br>
-                총 페이지 수 : <%=bookPage%><br>
-                재고 수 : <%=count%><br>
-                분류 : <%=category%><br>
-                상태 : <%=status%><br>
-                가격 : <%=price%><br>
-            </span>
+          <span class="bookInfoMainFrame-info-explanation">
+              <jsp:getProperty name="book" property="info"/>
+          </span>
+          <br />
+          <br />
+
+          <span>
+            도서코드 : <%=code%> <br />
+            저자 : <%=author%><br />
+            출판사 : <%=publisher%><br />
+            출판일 : <%=publishingDate%><br />
+            총 페이지 수 : <%=bookPage%><br />
+            재고 수 : <%=count%><br />
+            분류 : <%=category%><br />
+            상태 : <%=status%><br />
+            가격 : <%=price%><br />
+          </span>
         </span>
-        <form action="BookList.jsp" method="post">
-            <input type="submit" value="도서목록">
+        <br />
+        <form action="BookList.jsp">
+            <input type="submit" value="도서목록" />
         </form>
     </div>
 </div>
-
 <jsp:include page="footer.jsp"/>
 </body>
 </html>

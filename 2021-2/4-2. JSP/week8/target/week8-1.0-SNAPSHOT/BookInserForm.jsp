@@ -62,9 +62,9 @@
         <tr>
             <td class="bookRegistration-table-title">상태</td>
             <td>
-            <input type="radio" name="status" value="new">신규도서
-            <input type="radio" name="status" value="used">중고도서
-            <input type="radio" name="status" value="electro">E-book
+            <input type="radio" name="status" value="신규도서">신규도서
+            <input type="radio" name="status" value="중고도서">중고도서
+            <input type="radio" name="status" value="E-book">E-book
             </td>
         </tr>
         <tr>
@@ -74,7 +74,6 @@
         <tr>
             <td colspan="2">
                 <input type="submit" value="등록">
-
             </td>
         </tr>
     </table>
