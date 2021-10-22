@@ -1,6 +1,8 @@
 package com.example.week8;
 
-public class Book {
+import java.io.Serializable;
+
+public class Book implements Serializable {
     /**
      * code : 코드
      * name : 코드

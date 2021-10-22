@@ -49,7 +49,9 @@
         </tr>
         <tr>
             <td class="bookRegistration-table-title">상세 정보</td>
-            <td><textarea name="info" cols="30" rows="10"></textarea></td>
+            <td>
+                <textarea name="info" cols="30" rows="10" placeholder="100자 이상 적어주세요"></textarea>
+            </td>
         </tr>
         <tr>
             <td class="bookRegistration-table-title">분류</td>

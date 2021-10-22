@@ -1,6 +1,8 @@
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
 <%@ page import="java.io.File" %>
+<%@ page import="java.io.FileOutputStream" %>
+<%@ page import="java.io.ObjectOutputStream" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -8,17 +10,14 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:useBean id="book" class="com.example.week8.Book" scope="application"/>
+<jsp:useBean id="book" class="com.example.week8.Book"/>
 <%
     String path = "/fileSave";
     String realPath = application.getRealPath(path);
-
     File folder = new File(realPath);
-
     if (!folder.exists()) {
         folder.mkdir();
     }
-
     int max = 1024 * 1024 * 10;
     MultipartRequest mt = new MultipartRequest(request, realPath, max,"utf-8",new DefaultFileRenamePolicy());
     String code = mt.getParameter("code");
@@ -48,6 +47,22 @@
 <jsp:setProperty name="book" property="status" value="<%=status%>"/>
 <jsp:setProperty name="book" property="status" value="<%=status%>"/>
 <jsp:setProperty name="book" property="fileImage" value="<%=fileName%>" />
+<%
+    String bookPath = "/bookSave";
+    realPath = application.getRealPath(bookPath);
+
+    File bookFolder = new File(realPath);
+
+    if (!bookFolder.exists()) {
+        bookFolder.mkdir();
+    }
+
+    realPath = application.getRealPath(bookPath+"/book_" + book.getCode());
+    FileOutputStream fos = new FileOutputStream(realPath);
+    ObjectOutputStream oos = new ObjectOutputStream(fos);
+    oos.writeObject(book);
+    oos.close();
+%>
 <jsp:include page="header.jsp"/>
 <div class="bookInfo">
     <span class="bookInfo-text">도서 정보</span>

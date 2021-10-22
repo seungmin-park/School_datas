@@ -1,10 +1,7 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: tmdla
-  Date: 2021-10-18
-  Time: 오후 9:50
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.FileInputStream" %>
+<%@ page import="java.io.ObjectInputStream" %>
+<%@ page import="com.example.week8.Book" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,32 +9,45 @@
     <title>Title</title>
 </head>
 <body>
-<jsp:useBean id="book" class="com.example.week8.Book" scope="application" />
 <jsp:include page="header.jsp"/>
 <div class="bookListInfo">
     <span class="bookListInfo-header">도서 목록</span>
 </div>
-<div class="bookListInfo-mainFrame">
-    <div class="bookListInfo-mainFrame-image">
-        <img src="fileSave/<jsp:getProperty name="book" property="fileImage" />"
-             alt="<jsp:getProperty name="book" property="fileImage" />">
-    </div>
-    <div class="bookListInfo-mainFrame-info">
-        <h2 class="bookListInfo-mainFrame-info-header">
-            <h2><jsp:getProperty name="book" property="name" /></h2>
-        </h2>
-        <div class="bookListInfo-mainFrame-info-explanation">
-          <jsp:getProperty name="book" property="info"
-          /></div>
-        <br>
-        <br>
-        <span
-        ><jsp:getProperty name="book" property="author" /> |
-          <jsp:getProperty name="book" property="publisher" /> |
-          <jsp:getProperty name="book" property="price"
-          /></span>
-    </div>
-</div>
+<%
+    String bookPath = "/bookSave";
+    String realPath = application.getRealPath(bookPath);
+    File file = new File(realPath);
+    File[] files = file.listFiles();
+
+    for (File file1 : files) {
+        String fileName = file1.getName();
+        FileInputStream fis = new FileInputStream(realPath+"/"+fileName);
+        if (fis != null) {
+            ObjectInputStream ois = new ObjectInputStream(fis);
+            Book book = (Book) ois.readObject();
+            out.print("<div class=\"bookListInfo-mainFrame\">\n" +
+                    "    <div class=\"bookListInfo-mainFrame-image\">\n" +
+                    "        <img src=\"fileSave/"+book.getFileImage()+"\"\n" +
+                    "             alt=\""+book.getFileImage()+"\">\n" +
+                    "    </div>\n" +
+                    "    <div class=\"bookListInfo-mainFrame-info\">\n" +
+                    "        <h2 class=\"bookListInfo-mainFrame-info-header\">\n" +
+                    "            <h2>"+book.getName()+"</h2>\n" +
+                    "        </h2>\n" +
+                    "        <div class=\"bookListInfo-mainFrame-info-explanation\">\n" +
+                    "          "+book.getInfo()+"</div>\n" +
+                    "        <br>\n" +
+                    "        <br>\n" +
+                    "        <span\n" +
+                    "        >"+book.getAuthor()+" |\n" +
+                    "          "+book.getPublisher()+" |\n" +
+                    "          "+book.getPrice()+"</span>\n" +
+                    "    </div>\n" +
+                    "</div>");
+        }
+    }
+%>
+
 <jsp:include page="footer.jsp"/>
 </body>
 </html>
