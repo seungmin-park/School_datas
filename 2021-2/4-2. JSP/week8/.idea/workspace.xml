@@ -10,9 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12b2d50d-0216-4d24-9394-3ad91927448c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/201844050_Book/201844050_Book.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/week8.iml" beforeDir="false" afterPath="$PROJECT_DIR$/week8.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +52,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="MTHome" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -112,6 +110,7 @@
       <option name="presentableId" value="Default" />
       <updated>1634893337101</updated>
       <workItem from="1634893345483" duration="342000" />
+      <workItem from="1634996852557" duration="208000" />
     </task>
     <servers />
   </component>
