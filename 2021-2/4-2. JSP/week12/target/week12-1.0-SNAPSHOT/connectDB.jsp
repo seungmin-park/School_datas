@@ -24,8 +24,8 @@
     ResultSet rs = null;
 
     String jdbcDriver = "jdbc:mysql://localhost:3306/jspDB?useSSL=false&serverTimeZone=UTC";
-    String dbUser = "root";
-    String dbPass = "Tmd1648215";
+    String dbUser = "inhatc";
+    String dbPass = "inhatc";
 
     String sql = "select * from emp";
 
