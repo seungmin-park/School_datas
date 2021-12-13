@@ -25,6 +25,8 @@ func main() {
 		{"박길동", 11112222, 4.01, "C"},
 	}
 
+
+	//정렬 기준 무엇?
 	sort.Sort(Students(s))
 	fmt.Println(s)
 	// var s1 Student = Student{"홍길동", 12345678, 3.91, "A"}

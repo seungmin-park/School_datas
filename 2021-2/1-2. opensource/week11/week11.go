@@ -1,22 +1,22 @@
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func printSlice(numbers []int) {
-	for _, number := range numbers {
-		fmt.Print(number, " ")
-	}
-	fmt.Println()
-}
+// func printSlice(numbers []int) {
+// 	for _, number := range numbers {
+// 		fmt.Print(number, " ")
+// 	}
+// 	fmt.Println()
+// }
 
-func main() {
-	aSlice := []int{-1, 0, 4, 100}
-	printSlice(aSlice)
-	fmt.Printf("수용량 : %d 길이 : %d\n", cap(aSlice), len(aSlice))
-	aSlice = append(aSlice, -99)
-	printSlice(aSlice)
-	fmt.Printf("수용량 : %d 길이 : %d\n", cap(aSlice), len(aSlice))
-}
+// func main() {
+// 	aSlice := []int{-1, 0, 4, 100}
+// 	printSlice(aSlice)
+// 	fmt.Printf("수용량 : %d 길이 : %d\n", cap(aSlice), len(aSlice))
+// 	aSlice = append(aSlice, -99)
+// 	printSlice(aSlice)
+// 	fmt.Printf("수용량 : %d 길이 : %d\n", cap(aSlice), len(aSlice))
+// }
 
 // package main
 
@@ -57,21 +57,21 @@ func main() {
 //    }
 // }
 
-// package main
+package main
 
-// import "fmt"
+import "fmt"
 
-// func main() {
-//    threeD := [2][2][2]int{{{1, 0}, {-2, 4}}, {{5, -1}, {7, 0}}}
+func main() {
+   threeD := [2][2][2]int{{{1, 0}, {-2, 4}}, {{5, -1}, {7, 0}}}
 
-//    for i := 0; i < len(threeD); i++ {
-//       v := threeD[i]
-//       for j := 0; j < len(v); j++ {
-//          fmt.Print(v[j], " ")
-//       }
-//       fmt.Println()
-//    }
-// }
+   for i := 0; i < len(threeD); i++ {
+      v := threeD[i]
+      for j := 0; j < len(v); j++ {
+         fmt.Print(v[j], " ")
+      }
+      fmt.Println()
+   }
+}
 
 // package main
 

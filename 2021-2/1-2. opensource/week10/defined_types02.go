@@ -43,6 +43,7 @@ func main() {
 // 	return len(m)
 // }
 
+// //이거 왜 7이랑 18이지?
 // func main() {
 // 	var t1 = MyType("메서드테스트")
 // 	t2 := MyType("단 축")

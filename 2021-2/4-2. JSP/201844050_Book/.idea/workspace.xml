@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f2584e0-cef5-48ed-a6fb-e953927d6a38" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/java/com/example/week8/Book.java" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/java/com/example/week8/Book.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/webapp/BookInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/webapp/BookInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/webapp/BookInserForm.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/webapp/BookInserForm.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/webapp/BookList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/webapp/BookList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/webapp/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/webapp/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/webapp/footer.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/src/main/webapp/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/target/classes/com/example/week8/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/target/classes/com/example/week8/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/BookInfo.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/BookInfo.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/BookList.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/BookList.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/WEB-INF/classes/com/example/week8/Book.class" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/WEB-INF/classes/com/example/week8/Book.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../week8/target/week8-1.0-SNAPSHOT/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-2. opensource/week10/defined_types02.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-2. opensource/week10/defined_types02.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-2. opensource/week11/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-2. opensource/week11/week11.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-2. opensource/week11/week11.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../1-2. opensource/week9/structs_advanced.go" beforeDir="false" afterPath="$PROJECT_DIR$/../../1-2. opensource/week9/structs_advanced.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../2-2. Oracle/week3/SQLTools.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../2-2. Oracle/week3/SQLTools.ini" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +25,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.idea/workspace.xml" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -126,6 +120,7 @@
       <option name="presentableId" value="Default" />
       <updated>1634885656306</updated>
       <workItem from="1634885659345" duration="78000" />
+      <workItem from="1639045117366" duration="32000" />
     </task>
     <servers />
   </component>
