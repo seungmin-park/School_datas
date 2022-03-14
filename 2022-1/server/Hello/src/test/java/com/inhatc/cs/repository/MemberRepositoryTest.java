@@ -2,6 +2,7 @@ package com.inhatc.cs.repository;
 
 import com.inhatc.cs.AppConfig;
 import com.inhatc.cs.domain.Member;
+import com.inhatc.cs.service.LottoGenerator;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
