@@ -1,6 +1,7 @@
 package com.inhatc.cs.controller;
 
 import com.inhatc.cs.domain.Member;
+import com.inhatc.cs.dto.MemberDto;
 import com.inhatc.cs.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -14,11 +15,11 @@ public class MemberController {
     private final MemberRepository memberRepository;
 
     @GetMapping("/member")
-    public String member(Model model) {
+    public String member(Model model) throws Exception {
         Member member = new Member("서찬원", 24);
-        Member savedMember = memberRepository.save(member);
+        memberRepository.insert(new MemberDto(1L,"서찬원",24));
 
-        model.addAttribute("member", savedMember);
+//        model.addAttribute("member", savedMember);
 
         return "member";
     }

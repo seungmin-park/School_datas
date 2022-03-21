@@ -1,8 +1,7 @@
 package com.inhatc.cs.repository;
 
 import com.inhatc.cs.AppConfig;
-import com.inhatc.cs.domain.Member;
-import com.inhatc.cs.service.LottoGenerator;
+import com.inhatc.cs.dto.MemberDto;
 import lombok.extern.slf4j.Slf4j;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
@@ -13,8 +12,8 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @Slf4j
-@RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
+@RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = AppConfig.class)
 public class MemberRepositoryTest {
 
@@ -24,12 +23,19 @@ public class MemberRepositoryTest {
     @Test
     public void saveMember() throws Exception {
         //given
-        Member member = new Member("memberA", 10);
+//        Member member = new Member("memberA", 10);
+        memberRepository.dropDB();
+        memberRepository.createDB();
 
-        Member savedMember = memberRepository.save(member);
         //when
-        Member findMember = memberRepository.findById(member.getId());
+        MemberDto member = new MemberDto(1L, "memberA", 10);
+
+        memberRepository.insert(member);
+        MemberDto findMember = memberRepository.findById(member.getId());
         //then
-        Assertions.assertThat(savedMember).isEqualTo(findMember);
+        Assertions.assertThat(member.getId()).isEqualTo(findMember.getId());
+        Assertions.assertThat(member.getAge()).isEqualTo(findMember.getAge());
+        Assertions.assertThat(member.getUsername()).isEqualTo(findMember.getUsername());
+        Assertions.assertThat(member).isEqualTo(findMember);
     }
 }
