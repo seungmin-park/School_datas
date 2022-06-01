@@ -10,6 +10,8 @@ obj
 .vs
 *.hwp
 *.png
+*.docx
+*.csv
 *.pdf
 *.pptx
 *.class
