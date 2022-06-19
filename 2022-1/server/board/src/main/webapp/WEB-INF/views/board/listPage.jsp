@@ -39,6 +39,7 @@
 							<tr>
 								<td>${boardVO.bno}</td>
 								<td><a
+									<%--/board/readPage?page=&perPageNum=&bno=--%>
 									href='/board/readPage${pageMaker.makeQuery(pageMaker.cri.page) }&bno=${boardVO.bno}'>
 										${boardVO.title}</a></td>
 								<td>${boardVO.writer}</td>
@@ -84,6 +85,7 @@
 					<div class="text-center">
 						<ul class="pagination">
 
+							<%--prev == true 이전 페이지가 존재한다 뒤로가기 버튼 활성화--%>
 							<c:if test="${pageMaker.prev}">
 								<li><a href="${pageMaker.startPage - 1}">&laquo;</a></li>
 							</c:if>
@@ -96,6 +98,7 @@
 								</li>
 							</c:forEach>
 
+								<%--다음 페이지가 존재할 경우 다음페이지 이동하기 버튼 활성화--%>
 							<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 								<li><a
 									href="${pageMaker.endPage +1}">&raquo;</a></li>

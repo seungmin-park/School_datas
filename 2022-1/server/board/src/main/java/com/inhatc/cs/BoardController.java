@@ -144,7 +144,7 @@ public class BoardController {
 
   /**
    * ?bno=value 를 통해 얻은 value에 해당되는 게시물 수정 페이지에서 저장 버튼 클릭시 작동
-   * retrun 시 redirect 사용 if retrun "/board/listAll"; -> 새로고침시 Post method update 계속 동작
+   * retrun 시 redirect 사용 if return "/board/listAll"; -> 새로고침시 Post method update 계속 동작
    * remove가 아닌 create일 경우 새로고침시 똑같은 데이터 계속 생성
    * POST -> REDIRECT -> GET
    * @param board

@@ -28,10 +28,26 @@ public class PageMaker {
 //  확인 1
   private void calcData() {
 
+    /**
+     *      1 ~ 10
+     * ex1) page=7 -> ceil(0.7) -> 1 * 10 -> 10
+     *      11 ~ 20
+     * ex2) page=11 -> ceil(1.1) -> 2 * 10 -> 20
+     */
     endPage = (int) (Math.ceil(cri.getPage() / (double) displayPageNum) * displayPageNum);
 
+    /**
+     * ex1) 10 - 10 + 1 -> 1
+     * ex2) 20 - 10 + 1 -> 11
+     */
     startPage = (endPage - displayPageNum) + 1;
 
+    /**
+     * ex1) 전체 게시물 개수 311, perPageNum = 10, 총 보여줘야할 페이지 수 -> 32
+     *      ceil(31.1) -> 32
+     * ex2) 전체 게시물 개수 220, perPageNum = 10, 총 보여줘야할 페이지 수 -> 22
+     *      ceil(22) -> 22
+     */
     int tempEndPage = (int) (Math.ceil(totalCount / (double) cri.getPerPageNum()));
 
     if (endPage > tempEndPage) {
@@ -75,6 +91,7 @@ public class PageMaker {
 //  확인 2
   public String makeQuery(int page) {
 
+    //?page=&perPageNum=
     UriComponents uriComponents = UriComponentsBuilder.newInstance().queryParam("page", page)
         .queryParam("perPageNum", cri.getPerPageNum()).build();
 
