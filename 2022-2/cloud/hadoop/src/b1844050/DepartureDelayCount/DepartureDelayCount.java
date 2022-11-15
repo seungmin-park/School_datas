@@ -8,9 +8,10 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
+import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
-public class DepartureDelayaCount {
+public class DepartureDelayCount {
 	public static void main(String[] args) throws Exception{
 		Configuration conf = new Configuration();
 		
@@ -24,7 +25,7 @@ public class DepartureDelayaCount {
 		FileInputFormat.addInputPath(job, new Path(args[0]));
 		FileOutputFormat.setOutputPath(job, new Path(args[1]));
 		
-		job.setJarByClass(DepartureDelayaCount.class);
+		job.setJarByClass(DepartureDelayCount.class);
 		job.setMapperClass(DepartureDelayCountMapper.class);
 		job.setReducerClass(DelayCountReducer.class);
 		
@@ -33,6 +34,8 @@ public class DepartureDelayaCount {
 		
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
+
+		MultipleOutputs.addNamedOutput(job, "departure", TextOutputFormat.class, Text.class, IntWritable.class);
 		
 		job.waitForCompletion(true);
 	}
