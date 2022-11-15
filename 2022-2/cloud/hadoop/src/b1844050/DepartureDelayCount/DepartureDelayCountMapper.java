@@ -13,9 +13,18 @@ public class DepartureDelayCountMapper extends Mapper<LongWritable, Text, Text, 
 
 	public void map(LongWritable key, Text value, Context context) throws IOException, InterruptedException {
 		AirlinePerformanceParser parser = new AirlinePerformanceParser(value);
-		outputKey.set(parser.getYear() + "," + parser.getMonth());
-		if (parser.getDepartureDelayTime() > 0) {
-			context.write(outputKey, outputValue);
+		if (parser.isDepartureDelayAvailable()){
+			if (parser.getDepartureDelayTime() > 0) {
+				outputKey.set("D," + parser.getYear() + "," + parser.getMonth());
+				context.write(outputKey, outputValue);
+			}
+		}
+
+		if (parser.isArriveDelayAvailable()) {
+			if (parser.getArriveDelayTime() > 0){
+				outputKey.set("A," + parser.getYear() + "," + parser.getMonth());
+				context.write(outputKey, outputValue);
+			}
 		}
 	}
 }

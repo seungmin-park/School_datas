@@ -1,5 +1,7 @@
 package b1844050.DepartureDelayCount;
 
+import static org.apache.hadoop.mapreduce.lib.output.MultipleOutputs.addNamedOutput;
+
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -8,7 +10,6 @@ import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
-import org.apache.hadoop.mapreduce.lib.output.MultipleOutputs;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 
 public class DepartureDelayCount {
@@ -35,8 +36,9 @@ public class DepartureDelayCount {
 		job.setOutputKeyClass(Text.class);
 		job.setOutputValueClass(IntWritable.class);
 
-		MultipleOutputs.addNamedOutput(job, "departure", TextOutputFormat.class, Text.class, IntWritable.class);
-		
+		addNamedOutput(job, "departure", TextOutputFormat.class, Text.class, IntWritable.class);
+		addNamedOutput(job, "arrival", TextOutputFormat.class, Text.class, IntWritable.class);
+
 		job.waitForCompletion(true);
 	}
 }
