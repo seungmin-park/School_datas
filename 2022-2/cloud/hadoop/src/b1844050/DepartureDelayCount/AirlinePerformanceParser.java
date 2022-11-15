@@ -21,7 +21,7 @@ public class AirlinePerformanceParser {
                 departureDelayAvailable = false;
             }
 			if (!columns[14].equals("NA")) {
-				arriveDelayTime = Integer.parseInt(columns[15]);
+				arriveDelayTime = Integer.parseInt(columns[14]);
 			} else {
 				arriveDelayAvailable = false;
 			}
